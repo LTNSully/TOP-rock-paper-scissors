@@ -11,5 +11,13 @@ function getComputerChoice(){
     } else {
         return "Scissors!";
     }
+}
 
+
+//Function that accepts human choice as an input
+function getHumanChoice(){
+    let humanChoice = prompt("type rock, paper, or scissors");
+    let text = "You chose " + humanChoice + "!";
+    document.getElementById("game").innerHTML = text;
+    return humanChoice;
 }
