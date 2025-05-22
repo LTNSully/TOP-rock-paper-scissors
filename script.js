@@ -38,7 +38,7 @@ function playRound(humanChoice, computerChoice){
          document.getElementById("game").innerHTML = drawText;
          return "The Computer chose the same! It's a DRAW!!!";
      }
-     // using object literal to speed things up
+     // Using object literal to speed things up
      const winningPair = {
          rock: "scissors", paper: "rock", scissors: "paper"
      }
