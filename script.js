@@ -58,6 +58,7 @@ function playRound(humanChoice, computerChoice){
      }
 
  }
+ //the loop makes sure we play five decisive rounds (ignore ties)
 for (let round = 1; round<=5;){
     const humanSelection = getHumanChoice();
     const computerselection = getComputerChoice();
