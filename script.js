@@ -42,7 +42,7 @@ function playRound(humanChoice, computerChoice){
     // Tie situation
      if (humanChoice === computerChoice){
         displayResult(`It's a Tie! You both chose ${humanChoice}.`);
-        return
+        return "tie"
      }
      // Using object literal to speed things up
      const winningPair = {
@@ -58,11 +58,13 @@ function playRound(humanChoice, computerChoice){
      }
 
  }
-for (let round = 1; round<=5; round++){
+for (let round = 1; round<=5;){
     const humanSelection = getHumanChoice();
     const computerselection = getComputerChoice();
-    playRound(humanSelection, computerselection);
-    console.log("Your score is: " + humanScore + "\nThe Computer score is: " + computerScore);
+    const result  = playRound(humanSelection, computerselection);
+    if (result !== "tie"){
+        round++;
+    }
 }
 
 if(humanScore > computerScore){
