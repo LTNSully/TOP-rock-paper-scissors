@@ -22,7 +22,14 @@ function getHumanChoice(){
     return humanChoice;
 }
 
-
+//Function to display results (extracurricular)
+function displayResult(resultText) {
+  const resultsList = document.getElementById('results');
+  
+  const listItem = document.createElement('li'); // Create a new <li>
+  listItem.textContent = resultText;             // Set the text
+  resultsList.appendChild(listItem);             // Add it to the list
+}
 
 //Function to play the whole five round games
 function playGame(){
@@ -34,9 +41,8 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice){
     // Tie situation
      if (humanChoice === computerChoice){
-         drawText = "The Computer chose the same! It's a DRAW!!!"
-         document.getElementById("game").innerHTML = drawText;
-         return "The Computer chose the same! It's a DRAW!!!";
+        displayResult(`It's a Tie! You both chose ${humanChoice}.`);
+        return
      }
      // Using object literal to speed things up
      const winningPair = {
@@ -45,12 +51,10 @@ function playRound(humanChoice, computerChoice){
      //the actual round
      if (winningPair[humanChoice] === computerChoice){
          humanScore++;
-         console.log(`You WIN!!! ${humanChoice} beats ${computerChoice}`);
-         document.getElementById("game").innerHTML = `You WIN!!! ${humanChoice} beats ${computerChoice}`;
+         displayResult(`You WIN!!! ${humanChoice} beats ${computerChoice}`); 
      } else {
          computerScore++;
-         console.log(`You LOSE!!! ${computerChoice} beats ${humanChoice}`);
-         document.getElementById("game").innerHTML = `You LOSE!!! ${computerChoice} beats ${humanChoice}`;
+         displayResult(`You LOSE!!! ${computerChoice} beats ${humanChoice}`);
      }
 
  }
