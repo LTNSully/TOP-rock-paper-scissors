@@ -11,13 +11,18 @@
     </head>
     <body>
         <h1>Rock Paper Scissors!</h1>
-        <h2>Click the button to play!</h2>
+        <h2 class="round-result">Pick Your Weapon to Play!</h2>
+        <p class="round-details">Win 5 rounds to win the game.</p>
         <br>
-        <button onclick="playGame()">PLAY!!!</button>
-        <h2>Rounds Results</h2>
-        <ul id="results"></ul>
-        <p id="game"></p>
+        <button id="rock">ROCK</button>
+        <button id="paper">PAPER</button>
+        <button id="scissors">SCISSORS</button>
+
+        <p id="score-display">USER: 0 ||| Computer: 0</p>
+        <p id="game-end"></p>
+
+
         
-        <script src="script.js" async defer></script>
+        <script src="script1.js" async defer></script>
     </body>
 </html>
